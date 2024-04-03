@@ -1,0 +1,32 @@
+site_name: PV
+
+nav:
+  - Home: index.md
+  - Code Reference: 
+    - reference/models/param.md
+    - reference/models/pvsystem.md
+    - reference/utils/functions.md
+    - reference/main.md
+
+theme:  
+  name: material
+  palette:
+    primary: cy
+    accent: purple
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+plugins:
+  - search
+  - mkdocstrings:
+      enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
+      default_handler: python
+      handlers:
+        python: 
+          paths: [pv_generation]
+          options:
+            show_source: false
+
+extra_css:
+    - styles.css
